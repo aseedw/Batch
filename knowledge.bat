@@ -1,6 +1,45 @@
 @echo off
 
 ::==============================================
+:: network get interface name
+
+wmic nic where "netconnectionid like '%'" get netconnectionid
+
+:: output ::
+:: NetConnectionID
+:: Local Area Connection
+:: Wireless Network Connection
+:: Bluetooth Network Connection
+:: VirtualBox Host-Only Network
+
+::==============================================
+:: network set ip
+
+:: static ip ( static ip mask dns )
+netsh interface ip set address "Local Area Connection" static 192.168.0.10 255.255.255.0 192.168.0.1 1
+
+:: dhcp
+netsh interface ip set address "Local Area Connection" dhcp
+
+::==============================================
+:: network check interface is connected or not
+
+netsh interface show interface name="Local Area Connection"
+
+:: output
+::Local Area Connection
+:: Type:                 Dedicated
+:: Administrative state: Enabled
+:: Connect state:        Disconnected
+
+:: example
+:loop
+timeout 2
+echo still waiting...
+netsh interface show interface name="Local Area Connection" | find "Connect state" |find "Connected" >nul || goto :loop
+echo Interface is now connected.
+
+::==============================================
 :: create empty file
 
 type NUL > file.txt
