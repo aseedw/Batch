@@ -89,3 +89,9 @@ IF %F%==0 IF %C%==0 (
 
 ::if else example
 if %c%==15 (echo "The value of variable c is 15") else (echo "Unknown value") 
+
+::==============================================
+:: set console langauge
+
+:: To English
+chcp 437 
