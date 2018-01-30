@@ -61,3 +61,31 @@ if "%version%" == "6.0" echo Windows Vista.
 ::Windows XP	              5.1
 ::Windows 2000	            5.0
 ::https://msdn.microsoft.com/en-us/library/windows/desktop/ms724832(v=vs.85).aspx
+
+::==============================================
+:: if
+
+:: if elseif example
+IF %F%==1 IF %C%==1 (
+    ::copying the file c to d
+    copy "%sourceFile%" "%destinationFile%"
+    )
+
+IF %F%==1 IF %C%==0 (
+    ::moving the file c to d
+    move "%sourceFile%" "%destinationFile%"
+    )
+
+IF %F%==0 IF %C%==1 (
+    ::copying a directory c from d, /s:  boş olanlar hariç, /e:boş olanlar dahil
+    xcopy "%sourceCopyDirectory%" "%destinationCopyDirectory%" /s/e
+    )
+
+IF %F%==0 IF %C%==0 (
+    ::moving a directory
+    xcopy /E "%sourceMoveDirectory%" "%destinationMoveDirectory%"
+    rd /s /q "%sourceMoveDirectory%"
+    )
+
+::if else example
+if %c%==15 (echo "The value of variable c is 15") else (echo "Unknown value") 
