@@ -174,9 +174,9 @@ call set delete=%%string:!find!=%%
 call set string=%%string:!delete!=%%
 echo %string%
 
-Output = This is my string
+::Output = This is my string
 
-This only works of course if the strings are not going to be found elsewhere in the line, e.g. with the string below removes both "to work with" strings 
+::This only works of course if the strings are not going to be found elsewhere in the line, e.g. with the string below removes both "to work with" strings 
 
 set string=This to work with is my string to work with 
 
