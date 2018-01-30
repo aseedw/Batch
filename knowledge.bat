@@ -95,3 +95,14 @@ if %c%==15 (echo "The value of variable c is 15") else (echo "Unknown value")
 
 :: To English
 chcp 437 
+
+::==============================================
+:: print .txt
+
+type filename
+
+::==============================================
+:: replace string
+
+:: replace space as none
+SET String=!String: =!
