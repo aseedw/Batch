@@ -6,6 +6,12 @@
 ::example
 echo command1 & echo command2 & echo command3
 
+:: run command2 when command1 comes back successfully
+echo command1 && echo command2
+
+:: run command2 when command1 comes back unsuccessfully
+echo command1 || echo command2
+
 ::==============================================
 :: network get interface name
 
