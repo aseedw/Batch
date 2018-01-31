@@ -1,6 +1,12 @@
 @echo off
 
 ::==============================================
+:: multiple commands in one line
+
+::example
+echo command1 & echo command2 & echo command3
+
+::==============================================
 :: network get interface name
 
 wmic nic where "netconnectionid like '%'" get netconnectionid
