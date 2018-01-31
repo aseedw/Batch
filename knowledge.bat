@@ -1,6 +1,15 @@
 @echo off
 
 ::==============================================
+:: network related command
+
+ipconfig
+getmac
+nbtstat
+netsh
+arp -a
+
+::==============================================
 :: multiple commands in one line
 
 ::example
