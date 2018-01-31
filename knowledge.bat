@@ -88,6 +88,16 @@ findstr /p /A:%1 "." "!param!\..\X" nul
 <nul set /p ".=%DEL%%DEL%%DEL%%DEL%%DEL%%DEL%%DEL%"
 exit /b
 
+::color 0A - where 0 is the background color and A is the text color
+::0 = Black       8 = Gray
+::1 = Blue        9 = Light Blue
+::2 = Green       A = Light Green
+::3 = Aqua        B = Light Aqua
+::4 = Red         C = Light Red
+::5 = Purple      D = Light Purple
+::6 = Yellow      E = Light Yellow
+::7 = White       F = Bright White
+
 ::==============================================
 :: wait user to input
 
