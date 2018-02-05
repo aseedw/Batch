@@ -1,6 +1,29 @@
 @echo off
 
 ::==============================================
+:: manipulate strings
+
+@echo off
+setlocal enableextensions enabledelayedexpansion
+:: String, with words separated by spaces
+set sentence=x y z    aas    bdd    
+
+:: Convert string of words to array
+set index=0
+for %%A in (%sentence%) do (
+    set Array[!index!] = %%A
+    set /a index += 1
+)
+
+:: show array
+set Array
+
+:: manipulate each elements in array
+for /F "tokens=2 delims==" %%s in ('set Array') do (
+	:: do something
+)
+
+::==============================================
 :: network related command
 
 ipconfig
