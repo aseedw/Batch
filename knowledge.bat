@@ -1,6 +1,19 @@
 @echo off
 
 ::==============================================
+:: To get the list of local users on the computer
+net users
+
+:: To get the very detail information about a particular user
+net users username
+
+:: To get the list of local groups available
+net localgroup
+
+:: To get the list of members who belong to a specific group
+net localgroup groupname
+
+::==============================================
 :: ACL
 
 
